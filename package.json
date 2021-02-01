@@ -1,0 +1,16 @@
+{
+	"name": "purify-pg",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": "https://github.com/japiirainen/purify-pg.git",
+	"author": "Joona Piirainen <joona.piirainen@gmail.com>",
+	"license": "MIT",
+	"dependencies": {
+		"purify-ts": "^0.16.1",
+		"ts-node": "^9.1.1",
+		"typescript": "^4.1.3"
+	},
+	"scripts": {
+		"ex": "ts-node index.ts"
+	}
+}
