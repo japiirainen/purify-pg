@@ -1,12 +1,9 @@
 {
 	"compilerOptions": {
-		"outDir": "dist",
-		"target": "es5",
-		"module": "commonjs",
 		"strict": true,
-		"esModuleInterop": true,
-		"skipLibCheck": true,
-		"forceConsistentCasingInFileNames": true
+		"target": "ES5",
+		"outDir": "lib",
+		"lib": ["ESNext"]
 	},
-	"exclude": ["node_modules"]
+	"include": ["src/**/*.ts"]
 }
