@@ -35,10 +35,10 @@
   resolved "https://registry.yarnpkg.com/@effect-ts/system/-/system-0.1.15.tgz#9a9702f7fb1dc2f3c90ad709e396fcf9d5b1cb32"
   integrity sha512-DXy/5qhlVO1cBhQlM/mLfJUIatoz+qfTYTKJxeHZcp3RHQDYqAC6NvyBuKhcYPCycHmxJgrJUFc2iW+vIP3j1A==
 
-"@types/node@^14.14.31":
-  version "14.14.31"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.31.tgz#72286bd33d137aa0d152d47ec7c1762563d34055"
-  integrity sha512-vFHy/ezP5qI0rFgJ7aQnjDXwAMrG0KqqIH7tQG5PPv3BWBayOPIQNBjVc/P6hhdZfMx51REc6tfDNXHUio893g==
+"@types/node@^15.0.0":
+  version "15.0.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-15.0.0.tgz#557dd0da4a6dca1407481df3bbacae0cd6f68042"
+  integrity sha512-YN1d+ae2MCb4U0mMa+Zlb5lWTdpFShbAj5nmte6lel27waMMBfivrm0prC16p/Di3DyTrmerrYUT8/145HXxVw==
 
 ansi-styles@^3.2.1:
   version "3.2.1"
@@ -92,6 +92,14 @@ escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
   integrity sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
+
+fluture@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/fluture/-/fluture-14.0.0.tgz#81e1cae996a262e214aa2a8d7845fe1359018e3b"
+  integrity sha512-pENtLF948a8DfduVKugT8edTAbFi4rBS94xjHwzLanQqIu5PYtLGl+xqs6H8TaIRL7z/B0cDpswdINzH/HRUGA==
+  dependencies:
+    sanctuary-show "^2.0.0"
+    sanctuary-type-identifiers "^3.0.0"
 
 fp-ts-std@^0.9.0:
   version "0.9.0"
@@ -148,6 +156,16 @@ parser-ts@^0.6.13:
   integrity sha512-i4xMotfMlquWSDVRo/SQGT9ctWxi74N5u0Lw3g4V4UnlT6PGQggYY9cv6z84BGIqYn1oXpgatEqul0PltxJS3Q==
   dependencies:
     "@babel/code-frame" "^7.0.0"
+
+sanctuary-show@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-show/-/sanctuary-show-2.0.0.tgz#2326b4744f4b0f993f18ca56a29f68a50f514637"
+  integrity sha512-REj4ZiioUXnDLj6EpJ9HcYDIEGaEexmB9Fg5o6InZR9f0x5PfnnC21QeU9SZ9E7G8zXSZPNjy8VRUK4safbesw==
+
+sanctuary-type-identifiers@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/sanctuary-type-identifiers/-/sanctuary-type-identifiers-3.0.0.tgz#51cb488d2ed9f194946a64ffe2b41dd49a348c0b"
+  integrity sha512-YFXYcG0Ura1dSPd/1xLYtE2XAWUEsBHhMTZvYBOvwT8MeFQwdUOCMm2DC+r94z6H93FVq0qxDac8/D7QpJj6Mg==
 
 source-map-support@^0.5.17:
   version "0.5.19"

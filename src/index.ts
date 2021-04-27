@@ -1,5 +1,4 @@
-import * as P from "jparsija"
+import * as F from "fluture"
+import { readFileF } from "./fluture/readfile"
 
-const res = P.parseJson('"foobar"')
-
-console.log(res)
+F.fork(console.log)(console.log)(readFileF)
