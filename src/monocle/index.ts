@@ -41,6 +41,6 @@ export const _pStreetName = _address.compose(_streenName)
 export const _pStreetNr = _address.compose(_streetNr)
 export const _pPostalCode = _address.compose(_postalCode)
 
-// ? traversables
+// ? traversals
 export const _booksTra = fromTraversable(array)<Book>()
 export const _favoriteColorsTra = fromTraversable(array)<string>()
