@@ -3,7 +3,7 @@
 		"strict": true,
 		"target": "ES5",
 		"outDir": "lib",
-		"lib": ["ESNext"]
+		"lib": ["ESNext", "DOM"]
 	},
 	"include": ["src/**/*.ts"]
 }

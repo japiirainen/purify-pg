@@ -62,6 +62,72 @@ export const outside =
  * A monoid where `concat` represents the union of two `Shape`s
  */
 export const MonoidUnion: Monoid<Shape> = {
+	concat: (first, second) => point => first(point) || second(point),
+	empty: () => false,
+}
+
+// pipe(
+//     MonoidUnion.concat(
+//         disk({x: 150, y: 200}, 100),
+//         disk({x: 250, y: 200}, 100)
+//     ),
+//     draw
+// )
+
+/**
+ * A monoid where `concat` represents the intersection of the two `Shape`s
+ */
+const MonoidIntersection: Monoid<Shape> = {
 	concat: (first, second) => point => first(point) && second(point),
 	empty: () => true,
+}
+
+// pipe(
+//     MonoidIntersection.concat(
+//         disk({x: 150, y: 200}, 100),
+//         disk({x: 250, y: 200}, 100)
+//     ),
+//     draw
+// )
+
+/**
+ * Using the combinator `outside` and `MonoidIntersection` we can
+ * create a `Shape` representing a ring
+ */
+export const ring = (point: Point, bigRadius: number, smallRadius: number): Shape =>
+	MonoidIntersection.concat(disk(point, bigRadius), outside(disk(point, smallRadius)))
+
+// pipe(ring({x: 200, y: 200}, 100, 50), draw)
+
+export const mickeymouse: ReadonlyArray<Shape> = [
+	disk({ x: 200, y: 200 }, 100),
+	disk({ x: 130, y: 130 }, 60),
+	disk({ x: 280, y: 280 }, 60),
+]
+
+// pipe(fold(MonoidUnion)(mickeymouse), draw)
+
+// -------------------------------------------------------------------------------------
+// utils
+// -------------------------------------------------------------------------------------
+
+export function draw(shape: Shape): void {
+	const canvas: HTMLCanvasElement = document.getElementById("canvas") as any
+	const ctx: CanvasRenderingContext2D = canvas.getContext("2d") as any
+	const width = canvas.width
+	const height = canvas.height
+	const imagedata = ctx.createImageData(width, height)
+	for (let x = 0; x < width; x++) {
+		for (let y = 0; y < height; y++) {
+			const point: Point = { x, y }
+			if (shape(point)) {
+				const pixelIndex = (point.y * width + point.x) * 4
+				imagedata.data[pixelIndex] = 0
+				imagedata.data[pixelIndex + 1] = 0
+				imagedata.data[pixelIndex + 2] = 0
+				imagedata.data[pixelIndex + 3] = 255
+			}
+		}
+	}
+	ctx.putImageData(imagedata, 0, 0)
 }
